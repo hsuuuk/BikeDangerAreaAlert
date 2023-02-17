@@ -1,0 +1,24 @@
+PODS:
+  - NMapsGeometry (1.0.1)
+  - NMapsMap (3.16.2):
+    - NMapsGeometry
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - NMapsMap
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - NMapsGeometry
+    - NMapsMap
+    - SnapKit
+
+SPEC CHECKSUMS:
+  NMapsGeometry: 53c573ead66466681cf123f99f698dc8071a4b83
+  NMapsMap: aaa64717249b06ae82c3a3addb3a01f0e33100ab
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 61bc8c01a7b856bc860af567a5b74c2f014f6a97
+
+COCOAPODS: 1.11.3
