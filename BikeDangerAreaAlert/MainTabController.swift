@@ -22,14 +22,14 @@ class MainTabController: UITabBarController {
         let setting = UINavigationController(rootViewController: SettingController())
         setting.tabBarItem.image = UIImage(systemName: "ellipsis")
         setting.tabBarItem.title = "설정"
-        
+                
         let tabBarappearance = UITabBarAppearance()
         tabBarappearance.backgroundColor = .white
         map.tabBarItem.standardAppearance = tabBarappearance
         map.tabBarItem.scrollEdgeAppearance = tabBarappearance
-        
         tabBar.tintColor = .black
 
-        viewControllers = [map, setting]
+        //viewControllers = [map, setting]
+        viewControllers = [setting]
     }
 }

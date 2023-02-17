@@ -87,15 +87,31 @@
 				8F2B2CB7299CECB400D4015A /* Data.swift */,
 				8F2B2CB9299CECBA00D4015A /* DataManager.swift */,
 				8F2B2CBF299D167D00D4015A /* MainTabController.swift */,
-				8F2B2CA7299CECA900D4015A /* MapController.swift */,
-				8F2B2CBB299CED0C00D4015A /* InfoController.swift */,
-				8F2B2CC1299F097F00D4015A /* SettingController.swift */,
+				8F2B2CC4299F2EF100D4015A /* Map */,
+				8F2B2CC3299F2EE200D4015A /* Setting */,
 				8F2B2CA9299CECA900D4015A /* Main.storyboard */,
 				8F2B2CAC299CECAB00D4015A /* Assets.xcassets */,
 				8F2B2CAE299CECAB00D4015A /* LaunchScreen.storyboard */,
 				8F2B2CB1299CECAB00D4015A /* Info.plist */,
 			);
 			path = BikeDangerAreaAlert;
+			sourceTree = "<group>";
+		};
+		8F2B2CC3299F2EE200D4015A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				8F2B2CC1299F097F00D4015A /* SettingController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8F2B2CC4299F2EF100D4015A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8F2B2CA7299CECA900D4015A /* MapController.swift */,
+				8F2B2CBB299CED0C00D4015A /* InfoController.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		AC2FA6532691E39CDE870950 /* Frameworks */ = {
