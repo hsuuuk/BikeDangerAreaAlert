@@ -1,11 +1,13 @@
 import UIKit
 import SnapKit
+import MessageUI
 
 class SettingController: UIViewController {
         
     let sectionTitles = ["Feedback", "About The App",]
-    let feedbackRow = ["평가", "연락처"]
-    let appDataRow = ["서비스 이용약관", "개인정보 처리방침", "위치기반서비스 이용약관", "저작권", "앱버젼"]
+    let feedbackRow = ["평가하기", "메일 보내기"]
+    let appDataRow = ["개인정보처리방침", "저작권(SIM HYUNSUK)", "앱버전(1.0)"]
+    // 서비스 이용약관, 위치기반서비스 이용약관
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,21 +70,41 @@ extension SettingController: UITableViewDataSource {
         
         if indexPath.section == 0 {
             cell.textLabel?.text = feedbackRow[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
         } else {
             cell.textLabel?.text = appDataRow[indexPath.row]
+            if indexPath.row == 0 {
+                cell.accessoryType = .disclosureIndicator
+            }
         }
         
         cell.backgroundColor = .systemGray6
-        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
 
 extension SettingController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 0, indexPath.row == 1 {
+            if MFMailComposeViewController.canSendMail() {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["hsuuuk123@gmail.com"])
+                present(mail, animated: true)
+            } else {
+                print("fail")
+            }
+        } else if indexPath.section == 1, indexPath.row == 1 {
+            print("tap")
+            let controller = PolicyController()
+            navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
 
-
+extension SettingController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+}
 
