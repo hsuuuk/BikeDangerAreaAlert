@@ -32,6 +32,13 @@ class InfoController: UIViewController {
         collectionView.register(InfoCell.self, forCellWithReuseIdentifier: "cell")
         
         navigationItem.title = "사고 설명"
+        let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
+        leftBarButton.tintColor = .black
+        navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    @objc func leftBarButtonTapped() {
+        dismiss(animated: true)
     }
 }
 
