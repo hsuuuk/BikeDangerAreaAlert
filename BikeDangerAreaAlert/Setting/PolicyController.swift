@@ -17,7 +17,6 @@ class PolicyController: UIViewController, WKNavigationDelegate {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "개인정보처리방침"
-        navigationController?.navigationItem.title = ""
         navigationController?.navigationBar.tintColor = .black
         navigationController?.navigationBar.topItem?.title = ""
         

@@ -38,7 +38,8 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         appearance.backgroundColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationItem.title = "지도"
+        navigationItem.title = "사고다발구역"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupMap() {
@@ -106,8 +107,9 @@ class MapController: UIViewController, CLLocationManagerDelegate {
                     marker.mapView = mapView
                     
                     marker.touchHandler =  { (overlay: NMFOverlay) -> Bool in
-                        let controller = InfoController()
-                        controller.data = item
+                        let infoController = InfoController()
+                        infoController.data = item
+                        let controller = UINavigationController(rootViewController: infoController)
                         controller.modalPresentationStyle = .automatic
                         self.present(controller, animated: true)
                         return true

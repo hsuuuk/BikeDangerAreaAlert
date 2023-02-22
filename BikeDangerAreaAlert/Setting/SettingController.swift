@@ -3,7 +3,9 @@ import SnapKit
 import MessageUI
 
 class SettingController: UIViewController {
-        
+    
+    var tableView: UITableView!
+    
     let sectionTitles = ["Feedback", "About The App",]
     let feedbackRow = ["평가하기", "메일 보내기"]
     let appDataRow = ["개인정보처리방침", "저작권(SIM HYUNSUK)", "앱버전(1.0)"]
@@ -14,10 +16,15 @@ class SettingController: UIViewController {
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.title = "더보기"
+    }
+    
     func setupUI() {
         view.backgroundColor = .white
         
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView = UITableView(frame: .zero, style: .insetGrouped)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.bottom.left.right.equalTo(view.safeAreaLayoutGuide)
@@ -28,9 +35,6 @@ class SettingController: UIViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
-        
-        navigationItem.title = "더보기"
-        //navigationController?.navigationBar.prefersLargeTitles = true
         
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .white
@@ -94,7 +98,7 @@ extension SettingController: UITableViewDelegate {
             } else {
                 print("fail")
             }
-        } else if indexPath.section == 1, indexPath.row == 1 {
+        } else if indexPath.section == 1, indexPath.row == 0 {
             print("tap")
             let controller = PolicyController()
             navigationController?.pushViewController(controller, animated: true)
@@ -107,4 +111,13 @@ extension SettingController: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true)
     }
 }
+
+
+//if let reviewURL = URL(string: "itms-apps://itunes.apple.com/app/itunes-u/id\(YourAppID)?ls=1&mt=8&action=write-review"), UIApplication.shared.canOpenURL(reviewURL) { // 유효한 URL인지 검사합니다.
+//    if #available(iOS 10.0, *) { //iOS 10.0부터 URL를 오픈하는 방법이 변경 되었습니다.
+//        UIApplication.shared.open(reviewURL, options: [:], completionHandler: nil)
+//    } else {
+//        UIApplication.shared.openURL(reviewURL)
+//    }
+//}
 

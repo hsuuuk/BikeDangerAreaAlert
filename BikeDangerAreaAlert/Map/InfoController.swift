@@ -10,72 +10,9 @@ import SnapKit
 
 class InfoController: UIViewController {
     
-    var addreddLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "주소"
-        return lb
-    }()
+    var collectionView: UICollectionView!
     
-    var accidentlabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "사고건수"
-        return lb
-    }()
-    
-    var injuryLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "사상자수"
-        return lb
-    }()
-    
-    var deathLabel: UILabel = {
-        let lb = UILabel()
-        lb.text = "사망자수"
-        return lb
-    }()
-    
-    var addressData: UILabel = {
-        let lb = UILabel()
-        lb.numberOfLines = 0
-        return lb
-    }()
-    
-    var accidentCount: UILabel = {
-        let lb = UILabel()
-        return lb
-    }()
-    
-    var injuryCount: UILabel = {
-        let lb = UILabel()
-        return lb
-    }()
-    
-    var deathCount: UILabel = {
-        let lb = UILabel()
-        return lb
-    }()
-    
-    lazy var nameStack: UIStackView = {
-        let stv = UIStackView(arrangedSubviews: [addreddLabel, accidentlabel, injuryLabel, deathLabel])
-        stv.axis = .vertical
-        stv.spacing = 10
-        stv.distribution = .fillEqually
-        //stv.backgroundColor = .lightGray
-        return stv
-    }()
-    
-    lazy var textStack: UIStackView = {
-        let stv = UIStackView(arrangedSubviews: [addressData, accidentCount, injuryCount, deathCount])
-        stv.axis = .vertical
-        stv.spacing = 10
-        stv.distribution = .fillEqually
-        //stv.backgroundColor = .systemFill
-        return stv
-    }()
-    
-    var data: Item? {
-        didSet { setupData() }
-    }
+    var data: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,33 +22,64 @@ class InfoController: UIViewController {
     func setupUI() {
         view.backgroundColor = .white
         
-        view.addSubview(nameStack)
-        nameStack.snp.makeConstraints { make in
-            make.top.left.equalToSuperview()
-            make.right.equalToSuperview().offset(-300)
-            make.bottom.equalToSuperview().offset(-300)
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.bottom.left.right.equalTo(view.safeAreaLayoutGuide)
         }
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(InfoCell.self, forCellWithReuseIdentifier: "cell")
         
-        view.addSubview(textStack)
-        textStack.snp.makeConstraints { make in
-            make.top.right.equalToSuperview()
-            make.left.equalTo(nameStack.snp.right)
-            make.bottom.equalToSuperview().offset(-300)
-        }
-        
-        let navi = UINavigationController()
-        navi.title = "1"
-        navi.navigationItem.title = "11"
-        navigationController?.navigationItem.title = "상세 설명"
-    }
-    
-    func setupData() {
-        guard let data = data else { return }
-        addressData.text = data.address
-        print(data.address)
-        accidentCount.text = String(data.accidentCount)
-        injuryCount.text = String(data.injuryCount)
-        deathCount.text = String(data.deathCount)
+        navigationItem.title = "사고 설명"
     }
 }
+
+extension InfoController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InfoCell
+        
+        if let data = data {
+            if indexPath.row == 0 {
+                cell.titleLabel.text = "사고 주소"
+                cell.dataLabel.text = data.address
+                cell.dataLabel.font = UIFont.systemFont(ofSize: 20)
+            } else if indexPath.row == 1 {
+                cell.titleLabel.text = "사고수"
+                cell.dataLabel.text = String(data.accidentCount)
+            } else if indexPath.row == 2 {
+                cell.titleLabel.text = "부상자수"
+                cell.dataLabel.text = String(data.injuryCount)
+            } else {
+                cell.titleLabel.text = "사망자수"
+                cell.dataLabel.text = String(data.deathCount)
+            }
+        }
+        
+        return cell
+    }
+}
+
+extension InfoController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.row == 0 {
+            return CGSize(width: 355, height: 100)
+        } else {
+            return CGSize(width: 112, height: 100)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+    }
+}
+
+extension InfoController: UICollectionViewDelegate {
+}
+
+
 

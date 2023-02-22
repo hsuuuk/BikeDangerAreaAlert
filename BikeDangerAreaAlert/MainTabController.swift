@@ -29,7 +29,7 @@ class MainTabController: UITabBarController {
         map.tabBarItem.scrollEdgeAppearance = tabBarappearance
         tabBar.tintColor = .black
 
-        //viewControllers = [map, setting]
-        viewControllers = [setting]
+        viewControllers = [map, setting]
+        //viewControllers = [setting]
     }
 }
