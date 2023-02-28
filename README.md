@@ -1,2 +1,1 @@
-# BikeDangerAreaAlert
-/Users/simhyunsuk/Desktop/Project/BikeDangerAreaAlert/개인정보처리방침.html
+# 세이프 바이크
