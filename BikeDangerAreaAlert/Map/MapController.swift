@@ -149,7 +149,7 @@ extension MapController {
                 let request = UNNotificationRequest(identifier: "testNotification", content: content, trigger: trigger)
                 
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-                print("사고다발지역 200m 근방입니다.")
+                print("사고다발지역 100m 근방입니다.")
             }
         }
     }

@@ -13,13 +13,13 @@
 		8F2B2CA6299CECA900D4015A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA5299CECA900D4015A /* SceneDelegate.swift */; };
 		8F2B2CA8299CECA900D4015A /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA7299CECA900D4015A /* MapController.swift */; };
 		8F2B2CAB299CECA900D4015A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA9299CECA900D4015A /* Main.storyboard */; };
-		8F2B2CAD299CECAB00D4015A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B2CAC299CECAB00D4015A /* Assets.xcassets */; };
 		8F2B2CB0299CECAB00D4015A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B2CAE299CECAB00D4015A /* LaunchScreen.storyboard */; };
 		8F2B2CB8299CECB400D4015A /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CB7299CECB400D4015A /* Data.swift */; };
 		8F2B2CBA299CECBA00D4015A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CB9299CECBA00D4015A /* DataManager.swift */; };
 		8F2B2CBC299CED0C00D4015A /* InfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CBB299CED0C00D4015A /* InfoController.swift */; };
 		8F2B2CC0299D167D00D4015A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CBF299D167D00D4015A /* MainTabController.swift */; };
 		8F2B2CC2299F097F00D4015A /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CC1299F097F00D4015A /* SettingController.swift */; };
+		8F40EB6C29A8FE60006671D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B2CAC299CECAB00D4015A /* Assets.xcassets */; };
 		8F93B42B29A3B444008A2E03 /* 개인정보처리방침.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */; };
 		8FB6AA6C29A3949C00A18C87 /* PolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6AA6B29A3949C00A18C87 /* PolicyController.swift */; };
 /* End PBXBuildFile section */
@@ -193,7 +193,7 @@
 			files = (
 				8F2B2CB0299CECAB00D4015A /* LaunchScreen.storyboard in Resources */,
 				8F93B42B29A3B444008A2E03 /* 개인정보처리방침.html in Resources */,
-				8F2B2CAD299CECAB00D4015A /* Assets.xcassets in Resources */,
+				8F40EB6C29A8FE60006671D6 /* Assets.xcassets in Resources */,
 				8F2B2CAB299CECA900D4015A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -386,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -402,9 +402,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 438AKY2D4G;
+				DEVELOPMENT_TEAM = 89BLGRU39K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeDangerAreaAlert/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -412,6 +413,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +421,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsuuuk.BikeDangerAreaAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -431,9 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 438AKY2D4G;
+				DEVELOPMENT_TEAM = 89BLGRU39K;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BikeDangerAreaAlert/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -441,6 +445,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,6 +453,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hsuuuk.BikeDangerAreaAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
