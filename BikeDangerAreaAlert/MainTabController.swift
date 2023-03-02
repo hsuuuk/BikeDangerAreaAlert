@@ -25,9 +25,12 @@ class MainTabController: UITabBarController {
                 
         let tabBarappearance = UITabBarAppearance()
         tabBarappearance.backgroundColor = .white
+        tabBar.tintColor = .black
+        
         map.tabBarItem.standardAppearance = tabBarappearance
         map.tabBarItem.scrollEdgeAppearance = tabBarappearance
-        tabBar.tintColor = .black
+        setting.tabBarItem.standardAppearance = tabBarappearance
+        setting.tabBarItem.scrollEdgeAppearance = tabBarappearance
 
         viewControllers = [map, setting]
         //viewControllers = [setting]

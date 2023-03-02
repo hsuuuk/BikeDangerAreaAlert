@@ -9,9 +9,7 @@ import UIKit
 import SnapKit
 
 class InfoController: UIViewController {
-    
-    var collectionView: UICollectionView!
-    
+        
     var data: Item?
     
     override func viewDidLoad() {
@@ -22,7 +20,7 @@ class InfoController: UIViewController {
     func setupUI() {
         view.backgroundColor = .white
         
-        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.top.bottom.left.right.equalTo(view.safeAreaLayoutGuide)
@@ -66,7 +64,6 @@ extension InfoController: UICollectionViewDataSource {
                 cell.dataLabel.text = String(data.deathCount)
             }
         }
-        
         return cell
     }
 }

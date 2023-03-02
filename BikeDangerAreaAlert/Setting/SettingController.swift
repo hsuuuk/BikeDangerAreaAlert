@@ -7,9 +7,9 @@ class SettingController: UIViewController {
     var tableView: UITableView!
     
     let sectionTitles = ["Feedback", "About The App",]
-    let feedbackRow = ["평가하기", "메일 보내기"]
+    //let feedbackRow = ["평가하기", "메일 보내기"]
+    let feedbackRow = ["메일 보내기"]
     let appDataRow = ["개인정보처리방침", "저작권(SIM HYUNSUK)", "앱버전(1.0)"]
-    // 서비스 이용약관, 위치기반서비스 이용약관
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +89,7 @@ extension SettingController: UITableViewDataSource {
 
 extension SettingController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0, indexPath.row == 1 {
+        if indexPath.section == 0, indexPath.row == 0 {
             if MFMailComposeViewController.canSendMail() {
                 let mail = MFMailComposeViewController()
                 mail.mailComposeDelegate = self
@@ -99,7 +99,6 @@ extension SettingController: UITableViewDelegate {
                 print("fail")
             }
         } else if indexPath.section == 1, indexPath.row == 0 {
-            print("tap")
             let controller = PolicyController()
             navigationController?.pushViewController(controller, animated: true)
         }

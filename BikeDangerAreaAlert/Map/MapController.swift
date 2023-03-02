@@ -39,7 +39,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.title = "사고다발구역"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupMap() {
@@ -73,21 +73,27 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     func setupCurrentlocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 거리 정확도
-        locationManager.requestWhenInUseAuthorization() // // 위치 허용받을 alert 알림
+        locationManager.requestWhenInUseAuthorization() // 위치 허용받을 alert 알림
+        locationManager.allowsBackgroundLocationUpdates = true // 백그라운드 사용 허용
         
-        if CLLocationManager.locationServicesEnabled() {
-            print("위치서비스 On")
-            locationManager.startUpdatingLocation()
-            
-            //현 위치로 카메라 이동
-            guard let latitude = locationManager.location?.coordinate.latitude else { return }
-            guard let longitude = locationManager.location?.coordinate.longitude else { return }
-            //let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.509519, lng: 127.068099))
-            cameraUpdate.animation = .easeIn
-            mapView.moveCamera(cameraUpdate)
-        } else {
-            print("위치서비스 Off")
+        DispatchQueue.global().async { [self] in
+            if CLLocationManager.locationServicesEnabled() {
+                print("위치서비스 On")
+                //locationManager.startUpdatingLocation()
+                locationManager.startMonitoringSignificantLocationChanges() // 백그라운드에서도 위치 취적
+                
+                //현 위치로 카메라 이동
+                guard let latitude = locationManager.location?.coordinate.latitude else { return }
+                guard let longitude = locationManager.location?.coordinate.longitude else { return }
+                let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+                cameraUpdate.animation = .easeIn
+                
+                DispatchQueue.main.async { [self] in
+                    mapView.moveCamera(cameraUpdate)
+                }
+            } else {
+                print("위치서비스 Off")
+            }
         }
     }
     
@@ -138,11 +144,11 @@ extension MapController {
             let markerLocation = CLLocation(latitude: maker.position.lat, longitude: maker.position.lng)
             let distance = currentLocation.distance(from: markerLocation)
             
-            if distance <= 100 {
+            if distance == 100 {
                 // 알림 발생
                 let content = UNMutableNotificationContent()
-                content.title = "알림"
-                content.body = "사고다발지역 100m 근방입니다."
+                content.title = "안전에 유의해주세요!"
+                content.body = "사고다발구역 100m 근방입니다."
                 content.sound = UNNotificationSound.default
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
                 
