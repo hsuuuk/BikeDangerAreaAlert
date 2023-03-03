@@ -39,7 +39,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.title = "사고다발구역"
-        //navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func setupMap() {

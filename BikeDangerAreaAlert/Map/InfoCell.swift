@@ -52,8 +52,5 @@ class InfoCell: UICollectionViewCell {
         
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
-//        layer.shadowColor = UIColor.black.cgColor
-//        layer.shadowOpacity = 0.5
-//        layer.shadowRadius = 10
     }
 }

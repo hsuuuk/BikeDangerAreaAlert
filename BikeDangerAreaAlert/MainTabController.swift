@@ -33,6 +33,5 @@ class MainTabController: UITabBarController {
         setting.tabBarItem.scrollEdgeAppearance = tabBarappearance
 
         viewControllers = [map, setting]
-        //viewControllers = [setting]
     }
 }
