@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2A12D75BCB8D1E15350B87DA /* Pods_BikeDangerAreaAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04174E98F5C7A0FADFB7F07 /* Pods_BikeDangerAreaAlert.framework */; };
 		8F08026C29A5FE9300C7E86D /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F08026B29A5FE9300C7E86D /* InfoCell.swift */; };
+		8F199A1C29E3C45800054D2B /* 개인정보처리방침.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F199A1B29E3C45800054D2B /* 개인정보처리방침.html */; };
 		8F2B2CA4299CECA900D4015A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA3299CECA900D4015A /* AppDelegate.swift */; };
 		8F2B2CA6299CECA900D4015A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA5299CECA900D4015A /* SceneDelegate.swift */; };
 		8F2B2CA8299CECA900D4015A /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CA7299CECA900D4015A /* MapController.swift */; };
@@ -20,13 +21,13 @@
 		8F2B2CC0299D167D00D4015A /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CBF299D167D00D4015A /* MainTabController.swift */; };
 		8F2B2CC2299F097F00D4015A /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B2CC1299F097F00D4015A /* SettingController.swift */; };
 		8F40EB6C29A8FE60006671D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F2B2CAC299CECAB00D4015A /* Assets.xcassets */; };
-		8F93B42B29A3B444008A2E03 /* 개인정보처리방침.html in Resources */ = {isa = PBXBuildFile; fileRef = 8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */; };
 		8FB6AA6C29A3949C00A18C87 /* PolicyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB6AA6B29A3949C00A18C87 /* PolicyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F8D16B1C66FFCBC95DC39A0 /* Pods-BikeDangerAreaAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeDangerAreaAlert.debug.xcconfig"; path = "Target Support Files/Pods-BikeDangerAreaAlert/Pods-BikeDangerAreaAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		8F08026B29A5FE9300C7E86D /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		8F199A1B29E3C45800054D2B /* 개인정보처리방침.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "개인정보처리방침.html"; sourceTree = "<group>"; };
 		8F230ED482F0407AB5674512 /* Pods-BikeDangerAreaAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BikeDangerAreaAlert.release.xcconfig"; path = "Target Support Files/Pods-BikeDangerAreaAlert/Pods-BikeDangerAreaAlert.release.xcconfig"; sourceTree = "<group>"; };
 		8F2B2CA0299CECA900D4015A /* BikeDangerAreaAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeDangerAreaAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2B2CA3299CECA900D4015A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		8F2B2CBB299CED0C00D4015A /* InfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoController.swift; sourceTree = "<group>"; };
 		8F2B2CBF299D167D00D4015A /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		8F2B2CC1299F097F00D4015A /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
-		8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "개인정보처리방침.html"; sourceTree = SOURCE_ROOT; };
 		8FB6AA6B29A3949C00A18C87 /* PolicyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyController.swift; sourceTree = "<group>"; };
 		E04174E98F5C7A0FADFB7F07 /* Pods_BikeDangerAreaAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BikeDangerAreaAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,7 +97,7 @@
 				8F2B2CAC299CECAB00D4015A /* Assets.xcassets */,
 				8F2B2CAE299CECAB00D4015A /* LaunchScreen.storyboard */,
 				8F2B2CB1299CECAB00D4015A /* Info.plist */,
-				8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */,
+				8F199A1B29E3C45800054D2B /* 개인정보처리방침.html */,
 			);
 			path = BikeDangerAreaAlert;
 			sourceTree = "<group>";
@@ -199,8 +199,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F199A1C29E3C45800054D2B /* 개인정보처리방침.html in Resources */,
 				8F2B2CB0299CECAB00D4015A /* LaunchScreen.storyboard in Resources */,
-				8F93B42B29A3B444008A2E03 /* 개인정보처리방침.html in Resources */,
 				8F40EB6C29A8FE60006671D6 /* Assets.xcassets in Resources */,
 				8F2B2CAB299CECA900D4015A /* Main.storyboard in Resources */,
 			);
