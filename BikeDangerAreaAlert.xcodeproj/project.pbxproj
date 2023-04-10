@@ -90,37 +90,45 @@
 			children = (
 				8F2B2CA3299CECA900D4015A /* AppDelegate.swift */,
 				8F2B2CA5299CECA900D4015A /* SceneDelegate.swift */,
-				8F2B2CB7299CECB400D4015A /* Data.swift */,
-				8F2B2CB9299CECBA00D4015A /* DataManager.swift */,
-				8F2B2CBF299D167D00D4015A /* MainTabController.swift */,
-				8F2B2CC4299F2EF100D4015A /* Map */,
-				8F2B2CC3299F2EE200D4015A /* Setting */,
+				8FD58C5129E3B678008A0EB0 /* Model */,
+				8FD58C5229E3B67E008A0EB0 /* View */,
+				8FD58C5329E3B687008A0EB0 /* Controller */,
 				8F2B2CA9299CECA900D4015A /* Main.storyboard */,
 				8F2B2CAC299CECAB00D4015A /* Assets.xcassets */,
 				8F2B2CAE299CECAB00D4015A /* LaunchScreen.storyboard */,
 				8F2B2CB1299CECAB00D4015A /* Info.plist */,
+				8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */,
 			);
 			path = BikeDangerAreaAlert;
 			sourceTree = "<group>";
 		};
-		8F2B2CC3299F2EE200D4015A /* Setting */ = {
+		8FD58C5129E3B678008A0EB0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8F2B2CC1299F097F00D4015A /* SettingController.swift */,
-				8FB6AA6B29A3949C00A18C87 /* PolicyController.swift */,
-				8F93B42A29A3B444008A2E03 /* 개인정보처리방침.html */,
+				8F2B2CB7299CECB400D4015A /* Data.swift */,
+				8F2B2CB9299CECBA00D4015A /* DataManager.swift */,
 			);
-			path = Setting;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		8F2B2CC4299F2EF100D4015A /* Map */ = {
+		8FD58C5229E3B67E008A0EB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8F2B2CA7299CECA900D4015A /* MapController.swift */,
-				8F2B2CBB299CED0C00D4015A /* InfoController.swift */,
 				8F08026B29A5FE9300C7E86D /* InfoCell.swift */,
 			);
-			path = Map;
+			path = View;
+			sourceTree = "<group>";
+		};
+		8FD58C5329E3B687008A0EB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F2B2CBF299D167D00D4015A /* MainTabController.swift */,
+				8F2B2CA7299CECA900D4015A /* MapController.swift */,
+				8F2B2CBB299CED0C00D4015A /* InfoController.swift */,
+				8F2B2CC1299F097F00D4015A /* SettingController.swift */,
+				8FB6AA6B29A3949C00A18C87 /* PolicyController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		AC2FA6532691E39CDE870950 /* Frameworks */ = {
